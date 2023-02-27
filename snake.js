@@ -1,9 +1,9 @@
-var snakeGame = document.createElement('div');
+let snakeGame = document.createElement('div');
 snakeGame.innerHTML = '<canvas id="snakeGameCanvas" width="400" height="400"></canvas>';
 document.body.appendChild(snakeGame);
-var canvas = document.getElementById('snakeGameCanvas');
-var ctx = canvas.getContext('2d');
-var snake = {
+let canvas = document.getElementById('snakeGameCanvas');
+let ctx = canvas.getContext('2d');
+let snake = {
   x: 200,
   y: 200,
   dx: 0,
@@ -14,17 +14,17 @@ var snake = {
   tailLength: 0,
   color: '#00FF00'
 };
-var food = {
+let food = {
   x: 0,
   y: 0,
   size: 10,
   color: '#FF0000'
 };
-var score = 0;
+let score = 0;
 function drawSnake() {
   ctx.fillStyle = snake.color;
   ctx.fillRect(snake.x, snake.y, snake.size, snake.size);
-  for (var i = 0; i < snake.tail.length; i++) {
+  for (let i = 0; i < snake.tail.length; i++) {
     ctx.fillRect(snake.tail[i].x, snake.tail[i].y, snake.size, snake.size);
   }
 }
